@@ -2,7 +2,7 @@
 const express = require("express");
 const path = require("node:path");
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Set views
 app.set("views", path.join(__dirname, "views"));
@@ -26,5 +26,5 @@ app.use("/", indexRouter);
 
 // Server
 app.listen(PORT, () => {
-  console.log(`My first Express app - listening on port ${PORT}!`);
+  console.log(`App is listening on port ${PORT}!`);
 });
